@@ -1,0 +1,23 @@
+i2t.settings:
+  path: '/admin/config/i2t'
+  defaults:
+    _form: '\Drupal\i2t\Form\I2tSettingsForm'
+    _title: 'i2t Smart configuration'
+  requirements:
+    _permission: 'administer site configuration'
+i2t.fence_enable:
+  path: '/api/i2t/fence/enable'
+  defaults:
+    _controller: 'Drupal\i2t\Controller\I2tController::enableFence'
+    _title: 'Enable Fence'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+i2t.fence_disable:
+  path: '/api/i2t/fence/disable'
+  defaults:
+    _controller: 'Drupal\i2t\Controller\I2tController::disableFence'
+    _title: 'Disable Fence'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
