@@ -43,6 +43,7 @@ class I2tSettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => $this->t('API Key'),
       '#default_value' => $config->get('api_key'),
+      '#description' => $this->t('Make sure to get your API key from i2t, it should be something like:`aBCDefghijKLMnopqrstuvwxyzAbCdef`'),
     ];
 
     return parent::buildForm($form, $form_state);
