@@ -33,7 +33,7 @@ vice-versa.
 ### Use cases
 For instance, if you send the voice command `Enciende Alarma Vecinal` to Alexa
 and then other member of your family issues then the same command the alarm will
-stay enabled. On the current i2t implementation this actual does not happen
+stay enabled. On the current i2t implementation this actually does not happen
 because the second command will disable your alarm.
 
 Other example is: if you want to create an automated tasks to enable your
