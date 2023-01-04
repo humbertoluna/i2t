@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The propuse of this Drupal module is to extend the current functionality
+The purpose of this Drupal module is to extend the current functionality
 provided by the i2t Smart devices to be controlled by voice commands third party
 devices such as Siri, Google Assistant or Alexa, please read to the official
 documentation at https://i2t.com.mx/ayuda-configuracion-control-por-voz/ before
