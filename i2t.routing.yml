@@ -21,3 +21,19 @@ i2t.fence_disable:
   methods:  [GET]
   requirements:
     _access: 'TRUE'
+i2t.alarm_enable:
+  path: '/api/i2t/alarm/enable'
+  defaults:
+    _controller: 'Drupal\i2t\Controller\I2tController::enableAlarm'
+    _title: 'Enable Alarm'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+i2t.alarm_disable:
+  path: '/api/i2t/alarm/disable'
+  defaults:
+    _controller: 'Drupal\i2t\Controller\I2tController::disableAlarm'
+    _title: 'Disable Alarm'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'

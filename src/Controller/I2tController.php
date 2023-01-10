@@ -102,6 +102,30 @@ class I2tController extends ControllerBase {
   }
 
   /**
+   * Disable the Alarm device.
+   *
+   * @return \Symfony\Component\HttpFoundation\Response
+   *   The status of the web request to enable the device.
+   */
+  public function disableAlarm() {
+    $api_key = $this->getApiKey();
+    if (!$api_key) {
+      $operation_result = $this->t('You need to set the API KEY');
+      return new Response($operation_result, 200, []);
+    }
+    $operation_result = $this->getDeviceStatus(self::ALARM);
+    if ($operation_result == 'on') {
+      $operation_result = $this->sendToggleRequest(self::ALARM, self::DISABLE);
+    }
+    elseif ($operation_result == 'off') {
+      $operation_result = $this->t('Alarm is already off');
+    }
+    $this->loggerFactory->notice($operation_result);
+
+    return new Response($operation_result, 200, []);
+  }
+
+  /**
    * Enable the Fence device.
    *
    * @return \Symfony\Component\HttpFoundation\Response
@@ -119,6 +143,30 @@ class I2tController extends ControllerBase {
     }
     elseif ($operation_result == 'on') {
       $operation_result = $this->t('Fence is already on');
+    }
+    $this->loggerFactory->notice($operation_result);
+
+    return new Response($operation_result, 200, []);
+  }
+
+  /**
+   * Enable the Alarm device.
+   *
+   * @return \Symfony\Component\HttpFoundation\Response
+   *   The status of the web request to enable the device.
+   */
+  public function enableAlarm() {
+    $api_key = $this->getApiKey();
+    if (!$api_key) {
+      $operation_result = $this->t('You need to set the API KEY');
+      return new Response($operation_result, 200, []);
+    }
+    $operation_result = $this->getDeviceStatus(self::ALARM);
+    if ($operation_result == 'off') {
+      $operation_result = $this->sendToggleRequest(self::ALARM, self::ENABLE);
+    }
+    elseif ($operation_result == 'on') {
+      $operation_result = $this->t('Alarm is already on');
     }
     $this->loggerFactory->notice($operation_result);
 

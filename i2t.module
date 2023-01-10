@@ -11,22 +11,22 @@ use Drupal\Core\Routing\RouteMatchInterface;
  * Implements hook_help().
  */
 function i2t_help($route_name, RouteMatchInterface $route_match) {
-    switch ($route_name) {
-        // Main module help for the i2t module.
-        case 'help.page.i2t':
-            $output = '';
-            $output .= '<h2>' . t('About') . '</h2>';
-            $output .= '<p>' . t('The purpose of this module is to extend the current functionality provided by the i2t Smart devices to be controlled by voice commands third party devices such as Siri, Google Assistant or Alexa, please read to the official <a href=":documentation_link">documentation</a> before use this module.',
-                    [
-                        ':documentation_link' => 'https://i2t.com.mx/ayuda-configuracion-control-por-voz/',
-                    ]);
-            $output .= '</p>';
-            $output .= '<p>' . t('Visit the <a href=":project_link">Project page</a> on Drupal.org for more information.',
-                    [
-                        ':project_link' => 'https://www.drupal.org/project/i2t',
-                    ]);
-            $output .= '</p>';
+  switch ($route_name) {
+    // Main module help for the i2t module.
+    case 'help.page.i2t':
+      $output = '';
+      $output .= '<h2>' . t('About') . '</h2>';
+      $output .= '<p>' . t('The purpose of this module is to extend the current functionality provided by the i2t Smart devices to be controlled by voice commands third party devices such as Siri, Google Assistant or Alexa, please read to the official <a href=":documentation_link">documentation</a> before use this module.',
+        [
+          ':documentation_link' => 'https://i2t.com.mx/ayuda-configuracion-control-por-voz/',
+        ]);
+      $output .= '</p>';
+      $output .= '<p>' . t('Visit the <a href=":project_link">Project page</a> on Drupal.org for more information.',
+        [
+          ':project_link' => 'https://www.drupal.org/project/i2t',
+        ]);
+      $output .= '</p>';
 
-            return $output;
-    }
+      return $output;
+  }
 }
